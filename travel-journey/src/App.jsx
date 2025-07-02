@@ -1,12 +1,25 @@
 import React from 'react'
 import Header from './Components/Header'
 import Entry from './Components/Entry'
-
+import datas from "../src/Datas/data";
 const App = () => {
+
+  const places = datas.map(data =>
+    <Entry
+      key={data.id}
+      placeName={data.title}
+      mapLink={data.googleMapsLink}
+      date={data.dates}
+      content={data.text}
+      imageLink={data.img.src}
+      altText={data.img.alt}
+      location={data.country} />
+  )
+
   return (
     <>
       <Header />
-      <Entry placeName="Mount Fuji" mapLink="https://www.google.com/maps/place/Mount+Fuji/@35.3606421,138.7170637,15z/data=!3m1!4b1!4m6!3m5!1s0x6019629a42fdc899:0xa6a1fcc916f3a4df!8m2!3d35.3606255!4d138.7273634!16zL20vMGNrczA?entry=ttu" date="12 Jan, 2021 - 24 Jan, 2021" content="Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists." imageLink="https://images.unsplash.com/photo-1606918801925-e2c914c4b503?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXQlMjBmdWppfGVufDB8fDB8fHww&ixlib=rb-4.1.0&q=60&w=3000" location="japan" />
+      {places}
 
 
     </>
