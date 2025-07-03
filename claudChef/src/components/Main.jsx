@@ -37,12 +37,12 @@ const Main = () => {
             </form>
 
             {ingredients.length > 0 && (
-                <div className="mt-10 sm:px-50 px-0">
-                    <h2 className="text-3xl my-6 font-poppins">Ingredients on hand:</h2>
+                <div className="mt-10 sm:px-30 px-0">
+                    <h2 className="sm:text-3xl text-2xl my-6 font-poppins">Ingredients on hand:</h2>
                     <div className="my-3 px-2">
                         <ul>
                             {ingredients.map((ingredient, index) => (
-                                <li key={index} className="my-1   text-lg font-poppins px-5 py-2 rounded-sm bg-amber-200 transition-transform hover:scale-103 hover:bg-amber-300 flex justify-between items-center"><p className="before:content-[''] before:mr-2">{ingredient}</p><button className="cursor-pointer" onClick={() => removeIngredient(index)}><i className="bi bi-trash2-fill text-3xl text-gray-900 hover:text-black"></i>
+                                <li key={index} className="my-1  text-sm sm:text-lg font-poppins px-5 py-2 rounded-sm bg-pink-200 transition-transform hover:scale-102 hover:bg-pink-300 flex justify-between items-center"><p className="before:content-[''] before:mr-2">{ingredient}</p><button className="cursor-pointer" onClick={() => removeIngredient(index)}><i className="bi bi-trash2-fill text-3xl text-gray-900 hover:text-black"></i>
                                 </button></li>
                             ))}
                         </ul>
